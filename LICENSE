@@ -1,21 +1,23 @@
-MIT License
+Protective Source License v1.0 (PSL-1.0)
 
 Copyright (c) 2025 Kaif
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Permission is hereby granted to any individual or organization to view, use, modify, and distribute copies of this project for non-abusive and lawful purposes, subject to the following terms and conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+1. The original README.md, disclaimers, and author credits must remain intact and unmodified in any fork, redistribution, or derivative work. Additional information may be appended, but existing content must not be removed, replaced, or altered in meaning.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+2. This software must not be used for illegal, deceptive, exploitative, or harmful purposes. Any use that promotes or supports such behavior automatically terminates the license.
+
+3. The original author retains the right to request removal, deletion, or takedown of any fork, clone, or redistributed copy that violates these terms. GitHub or other hosting platforms may be contacted to enforce removal for copyright or license infringement.
+
+4. Any redistribution or modification must include this license in full. Proper credit must be given to the original author (“Kaif”) in derivative works or re-releases.
+
+5. This software is provided “AS IS”, without warranty of any kind, express or implied. The author shall not be liable for any damages or losses arising from the use or misuse of this software.
+
+Violation of any clause in this license immediately and permanently terminates all granted rights under this license.
+
+For permissions beyond the scope of this license or takedown requests, contact:
+kaifcodec@gmail.com
+
+Author: Kaif
+Year: 2025
