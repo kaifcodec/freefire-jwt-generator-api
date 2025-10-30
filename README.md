@@ -20,7 +20,7 @@ The API supports both **POST JSON** and **GET query parameters** and is designed
 app/main.py              # FastAPI routes and service bootstrap
 app/core.py              # OAuth logic, protobuf encoding/decoding, AES encryption
 app/settings.py          # Configuration (keys, IV, headers, URLs)
-ff_proto/freefire_pb2.py # Your generated protobuf module
+ff_proto/freefire_pb2.py # Generated protobuf module
 requirements.txt         # Pinned dependencies
 run.sh                   # Uvicorn startup script
 ```
