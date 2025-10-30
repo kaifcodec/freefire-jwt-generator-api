@@ -43,15 +43,13 @@ pydantic==2.9.2
 ## ⚙️ Installation
 1. **Clone repository**:
    ```bash
-   git clone <this-repo> && cd <this-repo>
+   git clone https://github.com/kaifcodec/freefire-jwt-generator-api.git && cd freefire-jwt-generator-api
    ```
 2. **Create virtualenv and install dependencies**:
    ```bash
    python -m venv .venv && source .venv/bin/activate
    pip install -r requirements.txt
    ```
-3. **Protobuf Check**: Ensure your **`ff_proto/freefire_pb2.py`** exists in place.
-
 ---
 
 ### run.sh (Reference)
@@ -59,7 +57,7 @@ pydantic==2.9.2
 #!/usr/bin/env bash
 set -euo pipefail
 export PYTHONUNBUFFERED=1
-uvicorn app.main:app --host 0.0.0.0 --port "${PORT:-3000}" --workers "${WORKERS:-2}"
+uvicorn app.main:app --host 0.0.0.0 --port 3000 --workers 1
 ```
 
 ---
@@ -68,7 +66,7 @@ uvicorn app.main:app --host 0.0.0.0 --port "${PORT:-3000}" --workers "${WORKERS:
 
 ### GET (Quick Testing)
 ```bash
-curl "http://localhost:3000/api/token?uid=4099044117&password=4CF0D185F19AFE1BDD4EB4CC6AA88596B3B27BE7577DB56157C0B83CCB74B10D"
+curl "http://localhost:3000/api/token?uid=4104181280&password=6485A0BBC486BFE8CF065F14D45F9CDAB5BE5D7F2A5998A6A7CABB295BA5F31A"
 ```
 
 ### POST (Preferred)
