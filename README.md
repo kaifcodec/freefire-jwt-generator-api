@@ -2,7 +2,7 @@
 
 * For any question, write an email to: kaifcodec@gmail.com
 ---
-A **FastAPI** service that generates a game **JSON Web Token (JWT)** by reproducing the official mobile client flow.  
+A **FastAPI** service that generates a Free Fire guest account's **JSON Web Token (JWT)** by reproducing the official mobile client flow.  
 This process involves using the OAuth guest grant, protobuf serialization (via own `ff_proto/freefire_pb2.py`), and **AES-128-CBC** payload encryption.
 
 The API supports both **POST JSON** and **GET query parameters** and is designed for easy deployment.
