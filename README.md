@@ -54,7 +54,7 @@ pydantic==2.9.2
    ```
 ---
 
-### run.sh (Reference)
+### run.sh (Reference) or Start command for backend: `./run.sh`
 ```bash
 #!/usr/bin/env bash
 set -euo pipefail
