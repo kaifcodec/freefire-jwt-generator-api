@@ -104,6 +104,7 @@ Edit `app/settings.py`:
 
 ---
 
+* Since: 31/10/2025
 <p align="center">
   <img src="https://visitor-badge.laobi.icu/badge?page_id=kaifcodec.freefire-jwt-generator-api&style=for-the-badge&color=0078ff" alt="Repo Views">
 </p>
