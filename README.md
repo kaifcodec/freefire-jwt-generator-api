@@ -3,7 +3,7 @@
 * For any question, write an email to: kaifcodec@gmail.com
 ---
 A **FastAPI** service that generates a game **JSON Web Token (JWT)** by reproducing the official mobile client flow.  
-This process involves using the OAuth guest grant, protobuf serialization (via your own `ff_proto/freefire_pb2.py`), and **AES-128-CBC** payload encryption.
+This process involves using the OAuth guest grant, protobuf serialization (via own `ff_proto/freefire_pb2.py`), and **AES-128-CBC** payload encryption.
 
 The API supports both **POST JSON** and **GET query parameters** and is designed for easy deployment.
 
@@ -11,8 +11,7 @@ The API supports both **POST JSON** and **GET query parameters** and is designed
 
 ## ✨ Features
 * **FastAPI Endpoints**: `POST /api/token` (preferred) and `GET /api/token` for quick testing and integration.  
-* **Protobuf Integration**: Uses your generated `ff_proto/freefire_pb2.py` module directly.  
-* **Security**: Implements AES-128-CBC with PKCS7 padding and protobuf wire compatibility with the mobile client.  
+* **Protobuf Integration**: Uses generated `ff_proto/freefire_pb2.py` module directly.  
 * **Portable Start**: Simple, portable start script **`run.sh`** to use on any host (Render, Railway, Fly.io, VPS, etc.).
 
 ---
