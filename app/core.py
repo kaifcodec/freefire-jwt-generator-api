@@ -80,7 +80,7 @@ async def create_jwt(uid: str, password: str) -> Dict[str, str]:
         )
         r.raise_for_status()
 
-        # Direct protobuf decode of response bytes (mirroring your Python)
+        
         res_msg = freefire_pb2.LoginRes()
         res_msg.ParseFromString(r.content)
 
