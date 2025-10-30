@@ -104,9 +104,6 @@ Edit `app/settings.py`:
 
 ---
 
-## 📜 License and Credits
-Preserve original notices from your `get_jwt.py` according to your chosen license terms.
-
 <p align="center">
   <img src="https://visitor-badge.laobi.icu/badge?page_id=kaifcodec.freefire-jwt-generator-api&style=for-the-badge&color=0078ff" alt="Repo Views">
 </p>
