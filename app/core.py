@@ -95,11 +95,6 @@ async def create_jwt(uid: str, password: str) -> Dict[str, str]:
             timeout=settings.TIMEOUT,
         )
         r.raise_for_status()
-
-<<<<<<< HEAD
-        
-=======
->>>>>>> 28596b0 (OB51_FIX)
         res_msg = freefire_pb2.LoginRes()
         res_msg.ParseFromString(r.content)
 
