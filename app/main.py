@@ -21,7 +21,7 @@ async def root():
     }
 
 
-# GET with query parameters (convenience)
+
 @app.get("/api/token")
 async def get_token(uid: str = Query(...), password: str = Query(...)):
     try:
@@ -31,7 +31,6 @@ async def get_token(uid: str = Query(...), password: str = Query(...)):
         raise HTTPException(status_code=500, detail=str(e))
 
 
-# POST JSON (preferred)
 @app.post("/api/token")
 async def post_token(payload: TokenRequest = Body(...)):
     try:

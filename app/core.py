@@ -1,5 +1,3 @@
-# app/core.py
-
 import json
 from typing import Tuple, Dict, Any
 
@@ -27,20 +25,36 @@ def json_to_proto(json_data: Dict[str, Any], proto_message: message.Message) -> 
 
 
 async def get_access_token(client: httpx.AsyncClient, uid: str, password: str) -> Tuple[str, str]:
-    payload = (
-        f"uid={httpx.QueryParams({'uid': uid})['uid']}"
-        f"&password={httpx.QueryParams({'password': password})['password']}"
-        f"&response_type=token&client_type=2&client_secret={settings.CLIENT_SECRET_PAYLOAD}"
-    )
+    parts = settings.CLIENT_SECRET_PAYLOAD.split('&client_id=')
+    client_secret = parts[0]
+    client_id = int(parts[1]) if len(parts) > 1 and parts[1].isdigit() else 100067
+
+    payload = {
+        "client_id": client_id,
+        "client_secret": client_secret,
+        "client_type": 2,
+        "password": password,
+        "response_type": "token",
+        "uid": int(uid)
+    }
+
     headers = {
         "User-Agent": settings.USER_AGENT,
-        "Accept-Encoding": "gzip",
-        "Content-Type": "application/x-www-form-urlencoded",
+        "Accept": "application/json",
+        "Content-Type": "application/json; charset=utf-8",
         "Connection": "Keep-Alive",
+        "Accept-Encoding": "gzip"
     }
-    r = await client.post(settings.OAUTH_URL, content=payload, headers=headers, timeout=settings.TIMEOUT)
+
+    r = await client.post(settings.OAUTH_URL, json=payload, headers=headers, timeout=settings.TIMEOUT)
     r.raise_for_status()
-    data = r.json()
+
+    response_json = r.json()
+    data = response_json.get("data", {})
+
+    if 'error' in data:
+        raise RuntimeError(f"Garena API Error: {data.get('error_description', data['error'])}")
+
     return data.get("access_token", "0"), data.get("open_id", "0")
 
 
@@ -61,8 +75,10 @@ async def create_jwt(uid: str, password: str) -> Dict[str, str]:
         encoded = json_to_proto(login_req, req_msg)
         encrypted_payload = aes_cbc_encrypt(settings.MAIN_KEY, settings.MAIN_IV, encoded)
 
+        major_login_ua = "Dalvik/2.1.0 (Linux; U; Android 15; I2404 Build/AP3A.240905.015.A2_V000L1)"
+
         headers = {
-            "User-Agent": settings.USER_AGENT,
+            "User-Agent": major_login_ua,
             "Connection": "Keep-Alive",
             "Accept-Encoding": "gzip",
             "Content-Type": "application/octet-stream",
@@ -80,17 +96,21 @@ async def create_jwt(uid: str, password: str) -> Dict[str, str]:
         )
         r.raise_for_status()
 
+<<<<<<< HEAD
         
+=======
+>>>>>>> 28596b0 (OB51_FIX)
         res_msg = freefire_pb2.LoginRes()
         res_msg.ParseFromString(r.content)
 
-        # Build response
         token = res_msg.token if res_msg.token else "0"
         lock_region = res_msg.lock_region if res_msg.lock_region else ""
         server_url = res_msg.server_url if res_msg.server_url else ""
 
         if token == "0" or len(token) == 0:
-            raise RuntimeError("Failed to obtain JWT.")
+            import json_format
+            res_dict = json.loads(json_format.MessageToJson(res_msg))
+            raise RuntimeError(f"Failed to obtain JWT. Response details: {res_dict}")
 
         return {
             "token": token,
