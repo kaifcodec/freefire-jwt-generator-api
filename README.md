@@ -1,4 +1,4 @@
-# FreeFire JWT API 🎮
+# FreeFire JWT API (OB51_FIXED) 🎮
 
 * For any question, write an email to: kaifcodec@gmail.com
 ---
